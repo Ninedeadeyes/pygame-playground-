@@ -8,6 +8,7 @@ pygame.display.set_caption("Cookie Clicker")
 
 text_font=pygame.font.Font(None,50)
 title=text_font.render("Cookie Clicker",True,"black")
+title_rect = title.get_rect(center=(screen.get_width()/2, 50))
 
 running=True
 
@@ -22,8 +23,8 @@ while running:
         if event.type==pygame.QUIT:
             running=False
 
-
-    screen.blit(title,(130,15))
+    screen.blit(title,title_rect)
+    # screen.blit(title,(130,15))  old version 
 
     pygame.display.flip()
 
