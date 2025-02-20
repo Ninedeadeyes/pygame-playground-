@@ -7,13 +7,18 @@ class Game:
         self.cookie_image = pygame.image.load('cookie.png').convert_alpha()  # Load the cookie image
         self.cookie_rect = self.cookie_image.get_rect(center=(250, 250))  # Posit
         self.clicked=False
+        #self.cookie=pygame.Rect(0,0,300,300)
+        #self.cookie.center= (250, 250)
+        #self.cookie_color="brown"
     
     def click_button(self):
         self.mouse_pos=pygame.mouse.get_pos()
-        if self.cookie_rect.collidepoint(self.mouse_pos):
+        if self.cookie_rect.collidepoint(self.mouse_pos):    # if self.cookie.collidepoint(self.mouse_pos):
             print("colliding")
 
         screen.blit(self.cookie_image, self.cookie_rect)
+
+        #pygame.draw.rect(screen,self.cookie_color,self.cookie,border_radius=150)
 
     def render(self):
         self.click_button()    
